@@ -45,7 +45,10 @@ public class ChamadoController {
     public List<Chamado> listar() {
         return service.listar();
     }
-
+// id;private String solicitante;private String sala;private String equipamentoTag;
+   // private String problemaRelatado; private String diagnosticoTecnico;
+    //private String prioridade; private String status;
+   // private String dataAbertura;
     public String atualizar(int id, String solicitante, String sala, String equipamentoTag,
                             String problemaRelatado, String diagnosticoTecnico,
                             String prioridade, String status, String dataAbertura) {

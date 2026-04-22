@@ -7,6 +7,7 @@ package br.ulbra.view;
 
 import br.ulbra.controller.ChamadoController;
 import br.ulbra.model.Chamado;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -72,7 +73,7 @@ public class ChamadoView extends javax.swing.JFrame {
         txtData = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtProblema = new javax.swing.JTextField();
@@ -151,12 +152,27 @@ public class ChamadoView extends javax.swing.JFrame {
         jPanel1.add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 511, -1, -1));
 
         btnEditar.setText("EDITAR");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 511, -1, -1));
 
-        jButton1.setText("EXCLUIR");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 511, -1, -1));
+        btnExcluir.setText("EXCLUIR");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 511, -1, -1));
 
         btnLimpar.setText("LIMPAR");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 511, -1, -1));
 
         jLabel10.setText("PROBLEMA");
@@ -222,7 +238,60 @@ public class ChamadoView extends javax.swing.JFrame {
         txtDiagnostico.setText(tblChamados.getValueAt(linha, 5).toString());
         txtPrioridade.setText(tblChamados.getValueAt(linha, 6).toString());
         txtStatus.setText(tblChamados.getValueAt(linha, 7).toString());
+        txtData.setText(tblChamados.getValueAt(linha, 8).toString());
     }//GEN-LAST:event_tblChamadosMouseClicked
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+          int id = Integer.parseInt(txtId.getText());
+
+        String msg = controller.atualizar(
+                id, 
+                txtSolicitante.getText(),
+                txtSala.getText(),
+                txtTag.getText(),
+                txtProblema.getText(),
+                txtDiagnostico.getText(),
+                txtPrioridade.getText(),
+                txtStatus.getText(),
+                txtData.getText()
+        );
+
+        JOptionPane.showMessageDialog(null, msg);
+        listarTabela();
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+    int id = Integer.parseInt(txtId.getText());
+
+        String msg = controller.atualizar(
+                id,
+                txtSolicitante.getText(),
+                txtSala.getText(),
+                txtTag.getText(),
+                txtProblema.getText(),
+                txtDiagnostico.getText(),
+                txtPrioridade.getText(),
+                txtStatus.getText(),
+                txtData.getText()
+        );
+
+        JOptionPane.showMessageDialog(null, msg);
+        listarTabela();
+
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+     txtId.setText(null);
+        txtSolicitante.setText(null);
+        txtSala.setText(null);
+        txtTag.setText(null);
+        txtProblema.setText(null);
+        txtDiagnostico.setText(null);
+        txtPrioridade.setText(null);
+        txtStatus.setText(null);
+        txtId.setFocusable(true);
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,9 +330,9 @@ public class ChamadoView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
