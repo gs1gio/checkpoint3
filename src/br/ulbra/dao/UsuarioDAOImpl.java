@@ -135,12 +135,12 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         
         List<Usuario> lista = new ArrayList<>();
         try(Connection conn = ConnectionFactory.getConnection();
-        PrepareStatement stmt = conn.prepareStatement(sql);
+        PreparedStatement stmt = conn.prepareStatement(sql);
         ResultSet rs = stmt.executeQuery()){
             while(rs.next()){
                 Usuario u = new Usuario();
-                u.setId(rs.getInt("id_usuario"));
-                u.setString(rs.getString("nome"));
+                u.setId_usuario(rs.getInt("id_usuario"));
+                u.setNome(rs.getString("nome"));
                 lista.add(u);
             }
         }catch(Exception e){ 
