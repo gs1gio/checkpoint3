@@ -11,12 +11,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class EquipamentoDAOImpl implements EquipamentoDAO {
 
     @Override
     public void salvar(Equipamento equipamento) {
 
-        String sql = "INSERT INTO equipamento "
+        String sql = "INSERT INTO equipamentos "
                 + "(tag_patrimonio, tipo, sala) "
                 + "VALUES (?, ?, ?)";
 
@@ -37,7 +38,7 @@ public class EquipamentoDAOImpl implements EquipamentoDAO {
     @Override
     public List<Equipamento> listar() {
 
-        String sql = "SELECT * FROM equipamento";
+        String sql = "SELECT * FROM equipamentos";
         List<Equipamento> lista = new ArrayList<>();
 
         try (Connection conn = ConnectionFactory.getConnection();
@@ -66,7 +67,7 @@ public class EquipamentoDAOImpl implements EquipamentoDAO {
     @Override
     public Equipamento buscarPorId(int id_equipamento) {
 
-        String sql = "SELECT * FROM equipamento WHERE id_equipamento = ?";
+        String sql = "SELECT * FROM equipamentos WHERE id_equipamento = ?";
 
         try (Connection conn = ConnectionFactory.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -93,7 +94,7 @@ public class EquipamentoDAOImpl implements EquipamentoDAO {
     @Override
     public void atualizar(Equipamento equipamento) {
 
-        String sql = "UPDATE equipamento SET "
+        String sql = "UPDATE equipamentos SET "
                 + "tag_patrimonio = ?, tipo = ?, sala = ? WHERE id_equipamento = ?";
 
         try (Connection conn = ConnectionFactory.getConnection();
@@ -114,7 +115,7 @@ public class EquipamentoDAOImpl implements EquipamentoDAO {
     @Override
     public void deletar(int id_equipamento) {
 
-        String sql = "DELETE FROM equipamento WHERE id_equipamento = ?";
+        String sql = "DELETE FROM equipamentos WHERE id_equipamento = ?";
 
         try (Connection conn = ConnectionFactory.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
