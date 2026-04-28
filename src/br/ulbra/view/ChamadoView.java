@@ -56,17 +56,11 @@ public class ChamadoView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtSolicitante = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtSala = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtTag = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtDiagnostico = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtPrioridade = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtStatus = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblChamados = new javax.swing.JTable();
@@ -77,6 +71,10 @@ public class ChamadoView extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtProblema = new javax.swing.JTextField();
+        cbSolicitante = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,46 +89,32 @@ public class ChamadoView extends javax.swing.JFrame {
 
         jLabel3.setText("NOME DO SOLICITANTE:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
-        jPanel1.add(txtSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 288, -1));
-
-        jLabel4.setText("SALA:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-        jPanel1.add(txtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 288, -1));
 
         jLabel5.setText("TAG DO EQUIPAMENTO:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        txtTag.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTagActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtTag, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 288, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jLabel6.setText("DIAGNÓSTICO TÉCNICO:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 322, -1, -1));
-        jPanel1.add(txtDiagnostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 344, 288, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        jPanel1.add(txtDiagnostico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 288, -1));
 
         jLabel7.setText("PRIORIDADE:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 378, -1, -1));
-        jPanel1.add(txtPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 399, 288, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
         jLabel8.setText("STATUS:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 489, -1, -1));
-        jPanel1.add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 511, 288, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, -1));
 
         jLabel9.setText("DATA DE ABERTURA:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 433, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         tblChamados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "SOLICITANTE ", "SALA", "EQUIPAMENTO", "DIAGNÓSTICO", "PRIORIDADE", "STATUS ", "DATA ABERTURA"
+                "ID", "SOLICITANTE ", "EQUIPAMENTO", "DIAGNÓSTICO", "PRIORIDADE", "STATUS ", "DATA ABERTURA"
             }
         ));
         tblChamados.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,8 +124,8 @@ public class ChamadoView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblChamados);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 551, 816, 125));
-        jPanel1.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 455, 288, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 551, 700, 125));
+        jPanel1.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 288, -1));
 
         btnSalvar.setText("SALVAR");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -176,20 +160,32 @@ public class ChamadoView extends javax.swing.JFrame {
         jPanel1.add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 511, -1, -1));
 
         jLabel10.setText("PROBLEMA");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         txtProblema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtProblemaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 288, -1));
+        jPanel1.add(txtProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 288, -1));
+
+        cbSolicitante.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cbSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 290, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 290, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baixa", "Média", "Alta" }));
+        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 290, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aberto", "Fechado" }));
+        jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 290, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,15 +197,11 @@ public class ChamadoView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtTagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTagActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTagActionPerformed
     ChamadoController controller = new ChamadoController();
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 //solicitante, sala, equipamento_tag, problema_relatado, diagnostico_tecnico, prioridade, status, dataAbertura
         String mensagem = controller.cadastrar(
-                txtSolicitante.getText(),
+                cbSolicitante.get(),
                 txtSala.getText(),
                 txtTag.getText(),
                 txtProblema.getText(),
@@ -333,11 +325,14 @@ public class ChamadoView extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> cbSolicitante;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -349,11 +344,6 @@ public class ChamadoView extends javax.swing.JFrame {
     private javax.swing.JTextField txtData;
     private javax.swing.JTextField txtDiagnostico;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtPrioridade;
     private javax.swing.JTextField txtProblema;
-    private javax.swing.JTextField txtSala;
-    private javax.swing.JTextField txtSolicitante;
-    private javax.swing.JTextField txtStatus;
-    private javax.swing.JTextField txtTag;
     // End of variables declaration//GEN-END:variables
 }
